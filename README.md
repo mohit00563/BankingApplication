@@ -26,7 +26,7 @@
 
 # \- Language: Java
 
-# \- IDE: Any Java IDE (e.g., Eclipse, IntelliJ, VS Code)
+# \- IDE: VS Code
 
 # \- Uses arrays to store accounts and Scanner for input.
 
