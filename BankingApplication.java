@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
+// ----------------------
 // Account Class
+// ----------------------
 class Account {
-    private long accountNumber; // changed from int to long
+    private long accountNumber; // Changed from int to long
     private String accountHolderName;
     private double balance;
     private String email;
@@ -63,11 +65,13 @@ class Account {
     }
 }
 
+// ----------------------
 // User Interface Class
+// ----------------------
 public class BankingApplication {
     private static Account[] accounts = new Account[100]; // Array of accounts
     private static int accountCount = 0;
-    private static long accountNumberGenerator = 1000; // now long
+    private static long accountNumberGenerator = 1000; // Changed to long
     private static Scanner sc = new Scanner(System.in);
 
     // Create new account
@@ -97,7 +101,7 @@ public class BankingApplication {
         return null;
     }
 
-    // Deposit
+    // Deposit money
     public static void performDeposit() {
         System.out.print("Enter account number: ");
         long accNum = sc.nextLong();
@@ -112,7 +116,7 @@ public class BankingApplication {
         }
     }
 
-    // Withdraw
+    // Withdraw money
     public static void performWithdrawal() {
         System.out.print("Enter account number: ");
         long accNum = sc.nextLong();
