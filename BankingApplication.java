@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
-// ----------------------
 // Account Class
-// ----------------------
 class Account {
-    private long accountNumber; // Changed from int to long
+    private long accountNumber; // long for large numbers
     private String accountHolderName;
     private double balance;
     private String email;
@@ -65,14 +63,19 @@ class Account {
     }
 }
 
-// ----------------------
 // User Interface Class
-// ----------------------
 public class BankingApplication {
     private static Account[] accounts = new Account[100]; // Array of accounts
     private static int accountCount = 0;
-    private static long accountNumberGenerator = 1000; // Changed to long
+    private static long accountNumberGenerator = 7651110987611L; // Start with large number
     private static Scanner sc = new Scanner(System.in);
+
+    // Preload some accounts (optional)
+    public static void preloadAccounts() {
+        accounts[accountCount++] = new Account(++accountNumberGenerator, "Mohit", 10000, "mohit@gmail.com", "8877665544");
+        accounts[accountCount++] = new Account(++accountNumberGenerator, "John Doe", 5000, "john@example.com", "9988776655");
+        accounts[accountCount++] = new Account(++accountNumberGenerator, "Alice", 7500, "alice@example.com", "8899776655");
+    }
 
     // Create new account
     public static void createAccount() {
@@ -101,7 +104,7 @@ public class BankingApplication {
         return null;
     }
 
-    // Deposit money
+    // Deposit
     public static void performDeposit() {
         System.out.print("Enter account number: ");
         long accNum = sc.nextLong();
@@ -116,7 +119,7 @@ public class BankingApplication {
         }
     }
 
-    // Withdraw money
+    // Withdraw
     public static void performWithdrawal() {
         System.out.print("Enter account number: ");
         long accNum = sc.nextLong();
@@ -189,6 +192,7 @@ public class BankingApplication {
 
     // Main method
     public static void main(String[] args) {
+        preloadAccounts(); // Optional: preload some accounts
         mainMenu();
     }
 }
